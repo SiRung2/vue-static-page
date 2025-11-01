@@ -146,7 +146,10 @@ function makeStars(n = 100){
 
 /* 상단 등불 */
 const palette = ['#ffd86b','#ff8a80','#ffd54f','#81c784','#4fc3f7','#ce93d8','#ffd86b']
-const lanterns = ref<Lantern[]>(palette.map(c => ({ color: c })))
+const lanterns = ref<Lantern[]>(
+    palette.map((c, i) => ({ id: i, color: c }))
+)
+
 
 /* 소원 등불: 화면 클릭 위치에서 떠오르기 */
 const floating = ref<Floating[]>([])
